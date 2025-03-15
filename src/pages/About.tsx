@@ -1,0 +1,14 @@
+import React, { Suspense } from 'react';
+import { Lanyard } from '../components/Lanyard/Lanyard';
+
+export default function About() {
+  return (
+    <div className="about-container">
+      <Suspense fallback={<div>Loading 3D Model...</div>}>
+        <div className="lanyard-section" style={{ width: '100%', height: '100vh' }}>
+          <Lanyard />
+        </div>
+      </Suspense>
+    </div>
+  );
+} 

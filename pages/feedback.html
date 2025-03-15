@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Deepak</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Footer styles */
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            z-index: 1000;
+            text-align: center;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-style: italic;
+            filter: blur(2.8px);
+        }
+
+        .footer:hover {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        .footer .heart {
+            color: #ff69b4;
+            display: inline-block;
+            animation: heartbeat 1.5s ease infinite;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, #00D8FF, #00D8FF);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: 100% 2px;
+            padding-bottom: 2px;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* New Cursor Sticker styles */
+        .cursor-sticker {
+            width: 40px;  /* Slightly smaller size */
+            height: 40px;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: url('https://media.giphy.com/media/ARHdoLah3uoRUCMHjH/giphy.gif');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.15s ease;
+            will-change: transform;
+            transform: translate(-50%, -50%);  /* Center the sticker on cursor */
+        }
+
+        .cursor-sticker.hover {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cursor Sticker -->
+    <div class="cursor-sticker"></div>
+
+    <!-- Restored Logo -->
+    <div class="logo">
+        <a href="../index.html">
+            <img src="../assets/dp5.jpg" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Restored Navigation -->
+    <nav class="vertical-nav">
+        <ul>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="feedback.html">FEEDBACK</a></li>
+        </ul>
+    </nav>
+
+    <!-- Restored Social Links -->
+    <div class="social-links">
+        <a href="https://github.com/Paldeepak079" target="_blank" class="github">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/deepak-pal-18071126b" target="_blank" class="linkedin">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://open.spotify.com/user/31hxtt6aqmuqfxohrxrdgoeczcda?si=8974b1f7d667454a" target="_blank" class="spotify">
+            <i class="fab fa-spotify"></i>
+        </a>
+        <a href="https://www.instagram.com/paldeepak079" target="_blank" class="instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <div class="feedback-container">
+        <!-- Dual Scrolling Tracks -->
+        <div class="feedback-scroll-container" style="top: 20%">
+            <div class="feedback-track" id="track1"></div>
+        </div>
+        
+        <div class="feedback-scroll-container" style="top: 60%">
+            <div class="feedback-track" id="track2"></div>
+        </div>
+
+        <!-- Floating Feedback Button -->
+        <div class="feedback-btn" onclick="toggleFeedbackForm()">
+            <i class="fas fa-comment-alt"></i>
+        </div>
+
+        <!-- Feedback Form Overlay -->
+        <div class="feedback-overlay" id="feedbackOverlay">
+            <div class="feedback-form">
+                <div class="form-header">
+                    <h2>Share Your Feedback</h2>
+                    <button class="close-btn" onclick="toggleFeedbackForm()">&times;</button>
+                </div>
+                <input type="text" id="userName" placeholder="Your Name">
+                <textarea id="userFeedback" placeholder="Your valuable feedback..." rows="4"></textarea>
+                <button class="submit-btn" onclick="submitFeedback()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/feedback.js"></script>
+    <script src="../js/navigation.js"></script>
+    <!-- Footer -->
+    <div class="footer">
+        Made with <span class="heart">☕ ̆̈</span> by <a href="../assets/DR.pdf" target="_blank">𝓓𝒾𝓼   Ᏻuy.</a>
+    </div>
+
+    <!-- New Cursor Following Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sticker = document.querySelector('.cursor-sticker');
+            let isMoving = true;
+            let moveTimer;
+
+            // Define offset values
+            const offsetX = 50;  // Offset to the right
+            const offsetY = 0;  // Offset downward
+
+            function updateCursorPosition(e) {
+                // Position with offset
+                sticker.style.left = `${e.clientX + offsetX}px`;
+                sticker.style.top = `${e.clientY + offsetY}px`;
+                
+                // Handle hover effect
+                if (isMoving) {
+                    sticker.classList.remove('hover');
+                }
+                
+                clearTimeout(moveTimer);
+                isMoving = true;
+                
+                moveTimer = setTimeout(() => {
+                    isMoving = false;
+                    sticker.classList.add('hover');
+                }, 100);
+            }
+
+            // Add mouse move listener
+            document.addEventListener('mousemove', updateCursorPosition);
+
+            // Initial position
+            document.addEventListener('mouseover', function(e) {
+                sticker.style.left = `${e.clientX + offsetX}px`;
+                sticker.style.top = `${e.clientY + offsetY}px`;
+            }, { once: true });
+        });
+    </script>
+</body>
+</html> 

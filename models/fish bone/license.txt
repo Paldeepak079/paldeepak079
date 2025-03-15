@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fish Bone
+* source:	https://sketchfab.com/3d-models/fish-bone-1992aa25f12c4d4d99ecb9ba3c83c44a
+* author:	Snarkle Studios (https://sketchfab.com/SnarkleStudios)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fish Bone" (https://sketchfab.com/3d-models/fish-bone-1992aa25f12c4d4d99ecb9ba3c83c44a) by Snarkle Studios (https://sketchfab.com/SnarkleStudios) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

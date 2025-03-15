@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio with 3D Interactive Elements">
+    <title>Deepak-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Logo -->
+    <div class="logo">
+        <img src="assets/dp5.jpg" alt="Logo" onload="console.log('Logo loaded successfully')" onerror="console.error('Error loading logo')">
+    </div>
+
+    <!-- Vertical Navigation -->
+    <nav class="vertical-nav">          
+        <ul>
+            <li><a href="./pages/about.html">ABOUT</a></li>
+            <li><a href="./pages/projects.html">PROJECTS</a></li>
+            <li><a href="./pages/contact.html">CONTACT</a></li>
+            <li><a href="./pages/feedback.html">FEEDBACK</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="text-content">
+            <h1 class="name hover-animate">Deepak</h1>
+            <p class="pronunciation hover-animate">/de: ep: ak/</p>
+            
+            <div class="definition">
+                <p class="type hover-animate">Noun</p>
+                <p class="meaning hover-animate">Innovative Engineer</p>
+                
+                <p class="type hover-animate">Verb</p>
+                <ol>
+                    <li class="hover-animate">Create and innovate</li>
+                    <li class="hover-animate">Influence and inspire</li>
+                </ol>
+                
+                <p class="type hover-animate">Adjective</p>
+                <p class="traits hover-animate">Open-minded, detail-oriented</p>
+            </div>
+        </div>
+        
+        <div class="hover-container">
+            <div class="actually-wrapper">
+                <div class="actually-button">Actually...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D Model Container -->
+    <canvas id="model-container"></canvas>
+
+    <!-- Overlay for blur effect -->
+    <div class="overlay"></div>
+
+    <!-- Hidden Message -->
+    <div class="actually-content">Nothing defines me. LOL</div>
+
+    <div class="social-links">
+        <a href="https://github.com/Paldeepak079" target="_blank" class="github">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/deepak-pal-18071126b" target="_blank" class="linkedin">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://open.spotify.com/user/31hxtt6aqmuqfxohrxrdgoeczcda?si=8974b1f7d667454a" target="_blank" class="spotify">
+            <i class="fab fa-spotify"></i>
+        </a>
+        <a href="https://www.instagram.com/paldeepak079" target="_blank" class="instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3JwcXdzcHd5MW92NWprZXVpcTBtNXM5cG9obWh0N3I4NzFpaDE3byZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/WgsVx6C4N8tjy/giphy.gif" 
+             alt="GIF 1" 
+             class="gif-item">
+        <img src="https://media.giphy.com/media/KBbr4hHl9DSahKvInO/giphy.gif" 
+             alt="GIF 2" 
+             class="gif-item">
+        <img src="https://media.giphy.com/media/ArfrRmFCzYXsC6etQX/giphy.gif" 
+             alt="GIF 3" 
+             class="gif-item">
+    </div>
+
+    <!-- Make sure these are in the correct order -->
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/",
+            "three/examples/jsm/loaders/GLTFLoader.js": "https://unpkg.com/three@0.162.0/examples/jsm/loaders/GLTFLoader.js",
+            "three/examples/jsm/controls/OrbitControls.js": "https://unpkg.com/three@0.162.0/examples/jsm/controls/OrbitControls.js"
+        }
+    }
+    </script>
+    <script type="module" src="./js/main.js"></script>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/gif-animation.js"></script>
+</body>
+</html>
